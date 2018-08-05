@@ -1,0 +1,23 @@
+{
+  "name": "react-practice-simple",
+  "version": "1.0.0",
+  "description": "example react project",
+  "author": {
+    "name": "xitengfei",
+    "email": "447360803@qq.com"
+  },
+  "homepage": "https://xitengfei.github.io",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "start": "browser-sync start --server --port \"3002\" --files \"css/*.css, *.html\""
+  },
+  "bugs": {
+    "url": "https://github.com/xitengfei/codelib/issues"
+  },
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {}
+}
