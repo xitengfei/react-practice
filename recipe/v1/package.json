@@ -1,0 +1,23 @@
+{
+  "name": "example-project",
+  "version": "1.0.0",
+  "description": "example project for react-js",
+  "author": {
+    "name": "xitengfei",
+    "email": "447360803@qq.com"
+  },
+  "homepage": "https://xitengfei.github.io",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xitengfei/react-practice.git"
+  },
+  "scripts": {
+    "start": "browser-sync -server --files \"*.js\""
+  },
+  "bugs": {
+    "url": "https://github.com/xitengfei/react-practice/issues"
+  },
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {}
+}
