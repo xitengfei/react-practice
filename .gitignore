@@ -1,2 +1,6 @@
+
+# webstorm
 /.idea
+
+# dependencies
 node_modules/

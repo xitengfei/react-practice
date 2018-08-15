@@ -1,19 +1,41 @@
+const path = require('path');
+const webpack = require('webpack')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
 module.exports = {
-	entry: "./src/index.js",
+	mode:'development',
+	entry: "./src/app.js",
 	output:{
-		path:"dist/assets",
-		filename:"bundle.js"
+		path: path.resolve(__dirname, "dist/assets"),
+		filename: "bundle.js",
+		sourceMapFilename: 'bundle.map'
 	},
+	devtool: '#source-map',
 	module:{
 		rules: [
 			{
 				test: /\.js$/,
 				exclude: /(node_modules)/,
-				loader: ['babel-loader'],
-				query: {
-					presets: ['env', 'stage-0', 'react']
+				use: {
+					loader: 'babel-loader',
+					options: {
+						presets: ['react', 'es2015']
+					}
 				}
 			}
 		]
-	}
+	},
+	optimization: {
+		minimize: true,
+		minimizer: [
+			new UglifyJsPlugin({
+				test: /\.js($|\?)/i,
+				sourceMap: true
+			})
+		]
+	},
+	devServer: {
+		inline: true,
+		port: 8001,
+	},
 }
