@@ -1,6 +1,7 @@
-const path = require('path');
+const path = require('path')
 const webpack = require('webpack')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const HtmlWebpackPlugin = require("html-webpack-plugin")
 
 module.exports = {
 	mode:'development',
@@ -8,18 +9,18 @@ module.exports = {
 	output:{
 		path: path.resolve(__dirname, "dist/assets"),
 		filename: "bundle.js",
-		sourceMapFilename: 'bundle.map'
+		// sourceMapFilename: 'bundle.map'
 	},
-	devtool: '#source-map',
+	// devtool: '#source-map',
 	module:{
 		rules: [
 			{
-				test: /\.js$/,
-				exclude: /(node_modules)/,
+				test: /(\.jsx|\.js)$/,
+				exclude: /node_modules/,
 				use: {
 					loader: 'babel-loader',
 					options: {
-						presets: ['react', 'es2015']
+						presets: ['es2015', 'react']
 					}
 				}
 			}
@@ -38,4 +39,12 @@ module.exports = {
 		inline: true,
 		port: 8001,
 	},
+	plugins: [
+		new HtmlWebpackPlugin({
+			contentBase: "./dist",
+			template: path.resolve(__dirname, "index.html"),
+			filename: 'index.html',
+			inject: 'body'
+		}),
+	],
 }
