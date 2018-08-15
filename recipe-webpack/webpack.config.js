@@ -19,10 +19,21 @@ module.exports = {
 				exclude: /node_modules/,
 				use: {
 					loader: 'babel-loader',
-					options: {
-						presets: ['es2015', 'react']
-					}
+					// options: {
+					// 	presets: ['es2015', 'react']
+					// }
 				}
+			},
+			{
+				test: /\.css$/,
+				use: [
+					{
+						loader: 'style-loader'
+					},
+					{
+						loader: 'css-loader'
+					}
+				]
 			}
 		]
 	},
@@ -36,12 +47,13 @@ module.exports = {
 		]
 	},
 	devServer: {
-		inline: true,
+		contentBase: "./public",
+		historyApiFallback: true, // make all redirects point to index.html
+		inline: true, // refresh page automatically while coding
 		port: 8001,
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			contentBase: "./dist",
 			template: path.resolve(__dirname, "index.tpl.html"),
 			filename: 'index.html',
 			inject: 'body'
