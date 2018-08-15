@@ -42,7 +42,7 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			contentBase: "./dist",
-			template: path.resolve(__dirname, "index.html"),
+			template: path.resolve(__dirname, "index.tpl.html"),
 			filename: 'index.html',
 			inject: 'body'
 		}),

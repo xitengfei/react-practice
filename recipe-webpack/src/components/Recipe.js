@@ -9,7 +9,7 @@ const Recipe = ({name, ingredients, steps}) =>
             lists={ingredients} 
         />
         <Instructions 
-            title="Cooking Instructions"
+            title="Cooking Instructions HaHa"
             steps={steps}
         />
     </section>
