@@ -1,5 +1,5 @@
 // import './example/index'
 // import './Ch04/02-lifecycle'
 // import './Ch04/03-Ajax'
-// import './Ch05/index'
-import './Ch06/index'
+import './Ch05/index'
+// import './Ch06/index'
