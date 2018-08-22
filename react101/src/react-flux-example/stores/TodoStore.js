@@ -1,6 +1,5 @@
-import AppDispatcher from '../dispatch/AppDispatcher'
-import { ADD_TODO } from '../constants/actionTypes'
 import { EventEmitter } from 'events'
+import { ADD_TODO } from '../constants/actionTypes'
 
 const store = {
     todos: [],
@@ -17,20 +16,12 @@ class TodoStoreClass extends EventEmitter {
     getTodos(){
         return store.todos
     }
+    addTodo(payload){
+        store.todos.push(payload.text)
+        this.emit(ADD_TODO)
+    }
 }
 
 const TodoStore = new TodoStoreClass();
-
-AppDispatcher.register((action) => {
-    switch (action.type) {
-        case ADD_TODO:
-            store.todos.push(action.payload.text)
-            TodoStore.emit(ADD_TODO)
-            break
-        default:
-            return true
-    }
-    return true
-})
 
 export default TodoStore

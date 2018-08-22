@@ -6,7 +6,7 @@ class TodoHeader extends React.Component {
         super(props)
 
         this.onChange = this.onChange.bind(this)
-        this.onAdd = this.onAdd.bind(this)
+        this.addTodo = this.addTodo.bind(this)
         this.state = {
             text: '',
             editing: false,
@@ -17,7 +17,7 @@ class TodoHeader extends React.Component {
             text: ev.target.value,
         })
     }
-    onAdd(){
+    addTodo(){
         TodoActions.addTodo(this.state.text)
         this.setState({
             text:'',
@@ -35,7 +35,7 @@ class TodoHeader extends React.Component {
                       onChange={this.onChange}
                     />
                     <button
-                      onClick={this.onAdd}
+                      onClick={this.addTodo}
                     >添加</button>
                 </div>
             </div>

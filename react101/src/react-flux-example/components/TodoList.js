@@ -18,6 +18,9 @@ class TodoList extends React.Component{
     componentDidMount(){
         TodoStore.addChangeListener(this.onChange)
     }
+    componentWillUnmount(){
+        TodoStore.removeChangeListener(this.onChange)
+    }
     onChange(){
         this.setState(getAppState())
     }
