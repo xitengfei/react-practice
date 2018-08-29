@@ -3,4 +3,5 @@
 // import './Ch04/03-Ajax'
 // import './react-router-example/index'
 // import './react-router-example2/index'
-import './react-flux-example/index'
+// import './react-flux-example/index'
+import './react-redux-example0/index'
