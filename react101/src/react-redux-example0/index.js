@@ -1,35 +1,38 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {createStore} from 'redux'
+
+import {addTodo} from './actions'
 import TodoList from './components/TodoList'
+import TodoInput from './components/TodoInput'
+import store from './store'
 
-const store = 
+// const store = createStore(reducers)
 
-const store2 = {
-  todos: [
-    {
-        text: 'Eat food',
-        completed: true
-    }, 
-    {
-        text: 'Exercise',
-        completed: false
-    }
-  ],
-  visibilityFilter: 'SHOW_COMPLETED'
-}
+store.dispatch(addTodo('Learn about actions'))
+store.dispatch(addTodo('Learn about reducers'))
+store.dispatch(addTodo('Learn about store'))
+
+
 
 class App extends React.Component {
     constructor(props){
         super(props)
+        
         this.state = {
-            todos: store2.todos
+            todos: store.getState().todos
         }
+
+        store.subscribe(function(){
+            this.setState({
+                todos: store.getState().todos
+            })
+        }.bind(this))
     }
     render() {
         return (
             <div>
                 <TodoList todos={this.state.todos} />
+                <TodoInput />
             </div>
         )
     }

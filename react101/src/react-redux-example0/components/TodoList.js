@@ -5,9 +5,9 @@ const TodoList = ({todos}) => (
     <div>
         <h1>Todo List</h1>
         <ul>
-            {todos.map(todo => (
+            {todos.map( (todo, i) => (
                 <Todo
-                    key={todo.id}
+                    key={i}
                     {...todo}
                 />
             ))}
