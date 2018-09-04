@@ -2,7 +2,7 @@ const todos = (state = [], action) => {
     switch (action.type) {
         case 'ADD_TODO':
             return [
-                ...sate,
+                ...state,
                 {
                     id: action.id,
                     text: action.text,

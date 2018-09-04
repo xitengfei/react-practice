@@ -4,4 +4,6 @@
 // import './react-router-example/index'
 // import './react-router-example2/index'
 // import './react-flux-example/index'
-import './react-redux-example0/index'
+// import './redux-example/index'
+// import './redux-example2/index'
+import './react-redux-example/index'
