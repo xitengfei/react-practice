@@ -6,4 +6,5 @@
 // import './react-flux-example/index'
 // import './redux-example/index'
 // import './redux-example2/index'
-import './react-redux-example/index'
+// import './react-redux-example/index'
+import './react-router-redux-github-finder/index'
