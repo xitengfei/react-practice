@@ -1,0 +1,6 @@
+
+.component-picker select{
+    min-width: 200px;
+    font-size: 16px;
+    padding: 8px 10px;
+}
