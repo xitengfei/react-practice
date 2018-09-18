@@ -9,4 +9,8 @@
 // import './react-redux-example/index'
 // import './react-router-redux-github-finder/index'
 // import './reddit-app-without-redux'
+
+/**
+ * 这个是比较经典的react-redux范例
+ */
 import './reddit-app-react-redux'
