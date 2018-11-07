@@ -11,6 +11,6 @@
 // import './reddit-app-without-redux'
 
 /**
- * 这个是比较经典的react-redux范例
+ * 这个是比较完整的react-redux example, 具体参考redux网站
  */
 import './reddit-app-react-redux'
